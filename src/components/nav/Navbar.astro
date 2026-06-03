@@ -4,7 +4,7 @@ import Container from "@components/elements/Container.astro";
 import { siteConfig } from "site-config";
 import { nav } from "site-config";
 import ThemeToggle from "@components/ThemeToggle.astro";
-import Logo from "../../icons/logo.svg?raw";
+import Logo from "../../assets/logo.svg?raw";
 
 const pathname = Astro.url.pathname;
 const isActive = (url: string) => url === "/" ? pathname === "/" : pathname === url || pathname.startsWith(`${url}/`);

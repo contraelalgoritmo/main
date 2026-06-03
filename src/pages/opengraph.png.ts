@@ -9,7 +9,7 @@ export const GET: APIRoute = async () => {
   const [ramonaBold, ramonaLight, logoSvg] = await Promise.all([
     fs.readFile(path.join(root, "public/fonts/Ramona-Bold.ttf")),
     fs.readFile(path.join(root, "public/fonts/Ramona-Light.ttf")),
-    fs.readFile(path.join(root, "src/icons/logo.svg")),
+    fs.readFile(path.join(root, "src/assets/logo.svg")),
   ]);
 
   const logoResvg = new Resvg(logoSvg, { fitTo: { mode: "height", value: 280 } });
