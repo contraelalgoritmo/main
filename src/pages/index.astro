@@ -1,166 +1,101 @@
 ---
 import Container from "@components/elements/Container.astro";
 import Layout from "@layouts/Layout.astro";
-import { siteConfig } from "site-config";
 
-const quickstart = `pnpm create astro@latest --template ${siteConfig.githubRepo}`;
-const quickstartId = "quickstart-command";
-
-// Keep page content data-driven so the homepage stays easy to scan and edit.
-const defaults = [
-  "Astro 6 with Tailwind CSS 4 and DaisyUI 5",
-  "Typed blog content collection with Markdown and MDX support",
-  "SEO metadata, sitemap, robots.txt, and local SVG icons",
-  "Dark mode toggle, skip link, and reduced-motion support",
-];
-
-const principles = [
-  "DaisyUI is included on purpose as the default UI layer.",
-  "Alpine is only used for tiny progressive enhancement needs.",
-  "Examples are meant to be easy to delete, not hard to work around.",
-  "Any escape hatches stay secondary to the default starter story.",
-];
-
-const starterTraits = [
-  "Opinionated enough to be useful",
-  "Small enough to understand quickly",
-  "Ready for production work with low setup friction",
-  "Easy to customize without losing control",
+const steps = [
+  {
+    n: "01",
+    title: "Montando una revista o una newsletter",
+    text: "O algo del estilo donde poder compartiros alternativas tech, consejos y otras cosas interesantes para poder acercaros a este mundillo.",
+  },
+  {
+    n: "02",
+    title: "Construyendo iniciativas para distintas causas sociales",
+    text: "Nos movemos en un mundo completamente tecnológico, y, muchas veces, por falta de financiación, no disponemos de todas las herramientas que nos gustaría para apoyar las causas sociales que apoyamos, es ahí es donde queremos ayudar nosotras.",
+  },
+  {
+    n: "03",
+    title: "Haciendo talleres para aprender a recuperar la tecnología",
+    text: "Queremos que todas le podamos dar una segunda vida a nuestros dispositivos, aprender cosas chulas y útiles y sobretodo generar un espacio donde construir entre todas.",
+  },
 ];
 ---
 
 <Layout
-  title="Production-ready Astro starter"
-  description="Production-ready Astro starter with Tailwind CSS 4, DaisyUI 5, blog support, SEO basics, and optional Alpine JS."
+  title="Inicio"
+  description="Un proyecto autogestionado que nace de una motivación común: recuperar la tecnología."
 >
-  <Container class="py-12 sm:py-16 lg:py-24">
-    <!--
-      Mobile-first structure:
-      1. Start with a single-column stack that reads well on narrow screens.
-      2. Introduce multi-column layouts only from `lg:` upward.
-    -->
-    <section class="space-y-8 lg:grid lg:grid-cols-[minmax(0,1.2fr)_minmax(18rem,24rem)] lg:gap-10 lg:space-y-0">
-      <div class="space-y-6">
-        <p class="badge badge-outline">Production-ready Astro starter</p>
 
-        <div class="space-y-4">
-          <h1 class="max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">
-            Astro, Tailwind, and DaisyUI with strong defaults and clear control.
-          </h1>
-          <p class="max-w-2xl text-base text-base-content/70 sm:text-lg">
-            This starter is designed to help developers move quickly without inheriting a theme, a setup wizard, or a pile of abstractions that are hard to remove later.
-          </p>
-          <p class="max-w-2xl text-base text-base-content/70 sm:text-lg">
-            It is opinionated enough to be useful, small enough to understand quickly, and structured to stay friendly to both experienced Astro users and newcomers.
-          </p>
-        </div>
-
-        <!-- Full-width buttons on mobile are easier to tap and scan. -->
-        <div class="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-          <a class="btn btn-primary w-full sm:w-auto" href="/blog">View blog example</a>
-          <a class="btn btn-outline w-full sm:w-auto" href="/daisyui">View DaisyUI reference</a>
-        </div>
-
-        <ul class="grid gap-3 sm:grid-cols-2">
-          {starterTraits.map((trait) => (
-            <li class="rounded-box border border-base-300 bg-base-100 px-4 py-3 text-sm text-base-content/75 shadow-sm">
-              {trait}
-            </li>
-          ))}
-        </ul>
+  <!-- Hero -->
+  <section class="hero-section relative min-h-screen flex items-center overflow-hidden bg-base-100">
+    <div class="hero-dots absolute inset-0 pointer-events-none"></div>
+    <Container class="relative z-10 py-32">
+      <div class="max-w-3xl">
+        <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight mb-6">
+          Creemos que la tecnología puede ser útil, ética y nuestra
+        </h1>
+        <p class="text-lg sm:text-xl text-base-content/70 max-w-xl mb-10">
+          Sigue de cerca lo que estamos montando para no perderte nada.
+        </p>
+        <a href="#proyecto" class="btn btn-primary btn-lg">
+          Conoce el proyecto
+        </a>
       </div>
+    </Container>
+  </section>
 
-      <aside class="card border border-base-300 bg-base-100 shadow-sm">
-        <div class="card-body gap-4">
-          <p class="text-sm font-semibold uppercase tracking-wide text-base-content/60">Quick start</p>
-          <div class="rounded-box border border-base-300 bg-base-200">
-            <div class="flex items-center justify-between gap-3 border-b border-base-300 px-4 py-3">
-              <div class="flex items-center gap-2 text-xs uppercase tracking-wide text-base-content/60">
-                <span class="h-2.5 w-2.5 rounded-full bg-success"></span>
-                <span>Command</span>
-              </div>
-              <button
-                type="button"
-                class="btn btn-xs btn-ghost"
-                data-copy-button
-                data-copy-target={quickstartId}
-              >
-                Copy
-              </button>
+  <div class="divider mx-auto max-w-5xl px-6"></div>
+
+  <!-- Introducing -->
+  <section id="proyecto" class="py-24 lg:py-36">
+    <Container>
+      <div class="max-w-2xl mx-auto text-center space-y-6">
+        <h2 class="text-3xl sm:text-4xl font-light leading-snug">
+          Un proyecto autogestionado que nace de una motivación común de las personas que lo construyen.
+        </h2>
+        <p class="text-base-content/70 text-lg">
+          Nos inspiramos en otras iniciativas que nacen de tratar recuperar el mundo que habitamos, cada una por supuesto, desde su prisma y su terreno, pero queriendo escapar del algoritmo que nos controla día tras día.
+        </p>
+        <a href="#como" class="btn btn-outline">Cómo lo hacemos</a>
+      </div>
+    </Container>
+  </section>
+
+  <div class="divider mx-auto max-w-5xl px-6"></div>
+
+  <!-- Steps -->
+  <section id="como" class="py-24 lg:py-36 bg-base-200">
+    <Container>
+      <h2 class="text-3xl sm:text-4xl font-light mb-16">Cómo lo vamos a hacer</h2>
+      <div>
+        {steps.map((item) => (
+          <div class="flex gap-8 py-10 border-b border-base-300 last:border-0">
+            <span class="text-4xl font-bold text-primary/40 shrink-0 w-14">{item.n}</span>
+            <div class="space-y-3">
+              <h3 class="text-xl font-light">{item.title}</h3>
+              <p class="text-base-content/70">{item.text}</p>
             </div>
-            <pre class="overflow-x-auto px-4 py-4 text-sm leading-6"><code id={quickstartId}>{quickstart}</code></pre>
           </div>
-          <p class="text-sm text-base-content/70">
-            Update `src/site-config.ts`, replace the sample content, and delete anything you do not need.
-          </p>
-          <div class="divider my-0"></div>
-          <p class="text-sm text-base-content/70">
-            The starter builds as a plain static Astro site by default, and you can add an adapter later if your deployment target needs one.
-          </p>
-        </div>
-      </aside>
-    </section>
-
-    <!-- Secondary information stays below the hero on mobile, then becomes a two-column grid. -->
-    <section class="mt-10 grid gap-6 lg:mt-14 lg:grid-cols-2">
-      <div class="card border border-base-300 bg-base-100 shadow-sm">
-        <div class="card-body gap-4">
-          <h2 class="card-title">Included by default</h2>
-          <ul class="space-y-3 text-sm text-base-content/75 sm:text-base">
-            {defaults.map((item) => (
-              <li class="flex items-start gap-3">
-                <span class="mt-1.5 h-2.5 w-2.5 shrink-0 rounded-full bg-primary"></span>
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
+        ))}
       </div>
+    </Container>
+  </section>
 
-      <div class="card border border-base-300 bg-base-100 shadow-sm">
-        <div class="card-body gap-4">
-          <h2 class="card-title">Starter principles</h2>
-          <ul class="space-y-3 text-sm text-base-content/75 sm:text-base">
-            {principles.map((item) => (
-              <li class="flex items-start gap-3">
-                <span class="mt-1.5 h-2.5 w-2.5 shrink-0 rounded-full bg-secondary"></span>
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </section>
-  </Container>
 </Layout>
 
-<script>
-  function initCopyButtons() {
-    document.querySelectorAll<HTMLButtonElement>('[data-copy-button]').forEach((button) => {
-      if (button.dataset.copyReady === 'true') return;
-      button.dataset.copyReady = 'true';
-
-      button.addEventListener('click', async () => {
-        const targetId = button.getAttribute('data-copy-target');
-        const source = targetId ? document.getElementById(targetId) : null;
-        if (!source) return;
-
-        const originalLabel = button.textContent ?? 'Copy';
-
-        try {
-          await navigator.clipboard.writeText(source.textContent ?? '');
-          button.textContent = 'Copied';
-        } catch {
-          button.textContent = 'Failed';
-        }
-
-        window.setTimeout(() => {
-          button.textContent = originalLabel;
-        }, 1200);
-      });
-    });
+<style>
+  .hero-dots {
+    background-color: transparent;
+    background-image: radial-gradient(var(--color-base-300) 1px, transparent 1px);
+    background-size: 16px 16px;
+    mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 70%, transparent 100%);
   }
 
-  // Re-run after Astro view transitions so the button works on client navigation too.
-  document.addEventListener('astro:page-load', initCopyButtons);
-</script>
+  [data-theme="dark"] .hero-dots {
+    background-color: #00091d;
+    background-image: radial-gradient(#ffffff33 1px, #00091d 1px);
+    background-size: 20px 20px;
+    mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 70%, transparent 100%);
+  }
+</style>
+

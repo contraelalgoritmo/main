@@ -1,37 +1,34 @@
 export const siteConfig = {
-  title: "Your Site",
-  description: "Minimal Astro site built with Tailwind CSS and DaisyUI.",
-  githubRepo: "aholbreich/astro-tailwind-daisyui-starter",
-  // Astro validates these public env vars in astro.config.mjs.
+  title: "Contra el Algoritmo",
+  description: "Un proyecto autogestionado que nace de una motivación común: recuperar la tecnología.",
+  githubRepo: "contraelalgoritmo/main",
   site: import.meta.env.PUBLIC_SITE_URL,
-  footerText: "Replace this with your company or site name.",
+  footerText: "Contra el Algoritmo",
 
-  // Used in SEOmeta for Twitter card and Open Graph
   seo: {
     twitterHandle: import.meta.env.PUBLIC_TWITTER_HANDLE,
     twitterSite: import.meta.env.PUBLIC_SITE_URL,
   },
 };
 
-// Feature flags examples
 export const featureFlags = {
-  enableImprint: true,
+  enableImprint: false,
   enableDataprotection: false,
-  showAttribution: false, // Show starter attribution in the footer if you want it
+  showAttribution: false,
 };
 
 // Navigation menu items
 export const nav = [
   {
-    text: "Home",
+    text: "Inicio",
     url: "/",
   },
   {
-    text: "Blog",
-    url: "/blog",
+    text: "El proyecto",
+    url: "#proyecto",
   },
   {
-    text: "DaisyUI",
-    url: "/daisyui",
+    text: "Cómo lo hacemos",
+    url: "#como",
   },
 ];

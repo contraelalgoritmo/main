@@ -4,6 +4,7 @@ import Container from "@components/elements/Container.astro";
 import { siteConfig } from "site-config";
 import { nav } from "site-config";
 import ThemeToggle from "@components/ThemeToggle.astro";
+import Logo from "../../icons/logo.svg?raw";
 
 const pathname = Astro.url.pathname;
 const isActive = (url: string) => url === "/" ? pathname === "/" : pathname === url || pathname.startsWith(`${url}/`);
@@ -18,8 +19,8 @@ const isActive = (url: string) => url === "/" ? pathname === "/" : pathname === 
     <Container>
       <nav class="navbar min-h-16 px-0">
         <div class="navbar-start">
-          <a href="/" class="btn btn-ghost px-0 text-base font-semibold normal-case hover:bg-transparent">
-            {siteConfig.title}
+          <a href="/" class="btn btn-ghost px-0 hover:bg-transparent" aria-label={siteConfig.title}>
+            <span class="block h-28 w-auto [&_svg]:h-full [&_svg]:w-auto [&_path]:fill-current" set:html={Logo} />
           </a>
         </div>
 

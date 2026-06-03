@@ -18,12 +18,39 @@
  * Docs: https://docs.astro.build/en/guides/fonts/
  */
 
+@font-face {
+  font-family: "Ramona";
+  src: url("/fonts/Ramona-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Ramona";
+  src: url("/fonts/Ramona-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme inline {
   --font-sans: var(--font-inter);
+  --font-display: "Ramona", ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer base {
   body {
     font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-weight: 700;
+  }
+
+  h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 300;
   }
 }
