@@ -11,7 +11,7 @@ export interface Props {
 
 const { title = siteConfig.title, description, image, canonical } = Astro.props;
 const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site).toString();
-const resolvedImage = image ?? new URL("/opengraph.jpg", Astro.site).toString();
+const resolvedImage = image ?? new URL("/opengraph.png", Astro.site).toString();
 ---
 
 <SEO
